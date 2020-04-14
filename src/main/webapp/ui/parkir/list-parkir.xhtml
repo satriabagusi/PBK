@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+<ui:composition template="/WEB-INF/templates/template.xhtml">
+	<ui:define name="content">
+		
+		<h:form id="idFormTabel">
+		    <p:dataTable var="parkir" value="#{dtSortParkir.listParkir1}" style="margin-bottom:40px">
+		        <f:facet name="header">
+		            List Data Parkir
+		        </f:facet>
+		        <p:column headerText="Kode Karcis" sortBy="#{parkir.kode_karcis}">
+		            <h:outputText value="#{parkir.kode_karcis}" />
+		        </p:column>
+		        
+		        <p:column headerText="Plat Nomor" sortBy="#{parkir.plat_nomor}">
+		            <h:outputText value="#{parkir.plat_nomor}" />
+		        </p:column>
+		        
+		        <p:column headerText="Jenis Parkir" sortBy="#{parkir.jenis_parkir}">
+		            <h:outputText value="#{parkir.jenis_parkir}" />
+		        </p:column>
+		        
+		        <!-- 
+		        <p:column headerText="Total Bayar" sortBy="#{parkir.total_bayar}">
+		            <h:outputText value="#{parkir.total_bayar}" />
+		        </p:column> -->
+		        
+		        <p:column headerText="Tanggal Masuk" sortBy="#{parkir.tgl_masuk}">
+		            <h:outputText value="#{parkir.tgl_masuk}" />
+		        </p:column>
+		        
+		        <!--  
+		        <p:column headerText="Tanggal Keluar" sortBy="#{parkir.tgl_keluar}">
+		            <h:outputText value="#{parkir.tgl_keluar}" />
+		        </p:column>-->
+		        
+   			 </p:dataTable>
+		</h:form>
+		
+	</ui:define>
+</ui:composition>
+</html>
